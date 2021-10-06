@@ -1,5 +1,5 @@
 body{
-   background-color: blue;
+   background-color: black;
 }
 #flex {
     display: flex;
@@ -13,5 +13,5 @@ main {
     background-color: white;
   }
 h1 {
-    color:pink;
+    color: red;
 }
