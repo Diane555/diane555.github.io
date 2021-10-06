@@ -6,8 +6,12 @@ body{
     flex-direction: row;
 }
 
-note {
-   color: white;
-   background-color: white;
-   font-weight: bold;
+nav {
+    background-color: white;
+  }
+main {
+    background-color: white;
+  }
+h1 {
+    color:pink;
 }
