@@ -1,0 +1,13 @@
+body{
+   background-color: blue;
+}
+#flex {
+    display: flex;
+    flex-direction: row;
+}
+
+note {
+   color: white;
+   background-color: white;
+   font-weight: bold;
+}
