@@ -3,7 +3,7 @@ const ctx = canvas.getContext('2d')
 const d = 3
 const tileWidth = canvas.width / d
 const tileHeight = canvas.height / d
-const tileColor = '#000000'
+const tileColor = '#ffffff'
 const canvasColor = '#eee'
 canvas.style.backgroundColor = canvasColor
 
