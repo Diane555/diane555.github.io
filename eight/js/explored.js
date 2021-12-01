@@ -1,4 +1,4 @@
-export  class Explored extends Object
+export class Explored extends Object
 {
     add(state)
     {
