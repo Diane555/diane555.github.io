@@ -63,7 +63,21 @@
         <h1>Eight</h1>
         <canvas id="canvas" width=300 height=300></canvas>
         <hr>
-        <button id="btn_start-ai" onclick="myclick()">Click Me!</button>
+        <button id="btn_start-ai">Click Me!</button>
+        <script>
+    let Button = document.getElementById("Btn");
+
+    Button.onclick = function change () {
+    if(Button.innerHTML == "START")
+    {
+        Button.innerHTML = "STOP";
+    }
+    else
+    {
+        Button.innerHTML = "START";
+    }
+    }
+</script>
         <script src="./js/main.js" type="module"></script>
     </body>
 </html>
