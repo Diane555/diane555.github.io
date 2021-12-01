@@ -1,121 +1,100 @@
-var m = 0;
-    function hod()
-    {
-        m++;
-        document.getElementById("steps").innerHTML = "Ходов:    " + m;
+const right = 1, left = 2, up = 3, down = 4
 
+function findZero(state)
+{
+    for(let l = 0; l < 3; l++)
+    {
+        for(let k = 0; k < 3; k++)
+            if(state[l][k] === 0)
+                return [l, k]
     }
+}
 
-    function igra (ev)
+export function actions(state)
+{
+    const [i, j] = findZero(state)
+    if(i === 0 && j === 0)
+        return [up, left]
+    else if(i === 0 && j === 2)
+        return [up, right]
+    else if(i === 2 && j === 0)
+        return [down, left]
+    else if(i === 2 && j === 2)
+        return [down, right]
+    else if(i === 0)
+        return [up, left, right]
+    else if(i === 2)
+        return [down, left, right]
+    else if(j === 0)
+        return [up, down, left]
+    else if(j === 2)
+        return [up, down, right]
+    else
+        return [up, down, left, right]
+}
+
+export function successor(state, action)
+{
+    const newS =[state[0].slice(), state[1].slice(), state[2].slice()]
+    const [i, j] = findZero(state)
+    if(action === left)
     {
-        var e = ev || window.event, o = e.target || e.srcElement;
-        if (o.tagName != 'INPUT')
-            return;
-        var obj = document.getElementById('m15'),
-            btn = obj.getElementsByTagName('input');
-        for (var sos = o.lang.split ('-'), j = k = 0, lj = sos.length; j < lj; j++)
-           if (btn [sos [j]].value < 0) {k = 1; break}
-        if (!k) return;
-        btn [sos [j]].style.visibility = 'visible';
-        btn [sos [j]].value = o.value;
-        o.style.visibility = 'hidden';
-        o.value = -1;
-        hod();
-        for (var j = 0; j < 8; j++)
-            if (btn [j].value != j + 1)
-                return;
-        obj.onclick = null;
-        alert ('Головоломка решена!');
+        newS[i][j] = state[i][j+1]
+        newS[i][j + 1] = 0
     }
-
-    function simple_timer(sec, block, direction)
+    else if(action === right)
     {
-        var time    = sec;
-        direction   = direction || false;
+        newS[i][j] = state[i][j - 1]
+        newS[i][j - 1] = 0
+    }
+    else if(action === down)
+    {
+        newS[i][j] = state[i - 1][j]
+        newS[i - 1][j] = 0
+    }
+    else if(action === up)
+    {
+        newS[i][j] = state[i + 1][j]
+        newS[i + 1][j] = state[i][j]
+    }
+    return newS
+}
 
-        var hour    = parseInt(time / 3600);
-        if ( hour < 1 ) hour = 0;
-        time = parseInt(time - hour * 3600);
-        if ( hour < 10 ) hour = '0'+hour;
+export function move(state, i, j)
+{
+    const zero = findZero(state)
+    const _actions = actions(state)
+    if(_actions.includes(right) && i === zero[0] && j === zero[1] - 1)
+        return successor(state, right)
+    else if(_actions.includes(left) && i === zero[0] && j === zero[1] + 1)
+        return successor(state, left)
+    else if(_actions.includes(up) && i === zero[0] + 1 && j === zero[1])
+        return successor(state, up)
+    else if(_actions.includes(down) && i === zero[0] - 1 && j === zero[1])
+        return successor(state, down)
+    else
+        return state
+}
 
-        var minutes = parseInt(time / 60);
-        if ( minutes < 1 ) minutes = 0;
-        time = parseInt(time - minutes * 60);
-        if ( minutes < 10 ) minutes = '0'+minutes;
 
-        var seconds = time;
-        if ( seconds < 10 ) seconds = '0'+seconds;
+export function goalTest(state)
+{
+    const goalState = [
+        [1, 2,3],
+        [4, 5, 6],
+        [7, 8, 0]]
+    return is_equal(goalState, state)
+}
 
-        block.innerHTML ="Время игры: "+hour+':'+minutes+':'+seconds;
-
-        if ( direction ) {sec++; setTimeout(function(){ simple_timer(sec, block, direction); }, 1000);}
-        else {
-            sec--;
-            if ( sec > 0 ) {setTimeout(function(){ simple_timer(sec, block, direction); }, 1000);}
-            else {alert('Время вышло!');}
+function is_equal(s1, s2)
+{
+    for(let i = 0; i < 3; i++)
+    {
+        for(let j = 0; j < 3; j++)
+        {
+            if(s1[i][j] !== s2[i][j])
+                return false
         }
     }
-
-    function start_timer()
-    {
-        var block = document.getElementById('sample_timer');
-        simple_timer(0, block, true);
-    }
-
-    function start_game()
-    {
-        start_timer();
-        document.getElementById('start').style.display = "none";
-        document.getElementById('reset').style.display = "block";
-
-        document.getElementById('sample_timer').style.display = "block";
-        document.getElementById('steps').style.display = "block";
-
-        (function ()
-        {
-            var shb = document.createElement ('input');
-            shb.type = 'button';
-            shb.style.cssButton =  'background: rgb(212,75,56)';
-            shb.style.cssText = 'height: 123px; width: 123px; font-weight: bolder; font-size: 40px ';
-            for (var obj = document.getElementById('m15'), btn = new Array (), j = 0; j < 9; j++)
-            {
-                btn [j] = obj.appendChild(shb.cloneNode (1));
-                if (!((j + 1) % 3))
-                    obj.appendChild(document.createElement('br'));
-            }
-            btn [j - 1].style.visibility = 'hidden';
-            btn [j - 1].value = -1;
-            var rnd = new Array (),
-                rsh = 1;
-            obj.onclick = igra;
-            while (rsh % 2)
-            {
-                for (var j = 0; j < 8; j++) rnd [j] = j + 1;
-                rnd.sort (new Function ('x', 'y', 'return Math.random () - Math.random ()'));
-                for (var rsh = j = 0; j < 7; rsh += s, j++)
-                    for (var s = 0, k = j + 1; k < 8; k++)
-                        if (rnd [k] < rnd [j])
-                            s++;
-            }
-            for (var j = 0; j < 9; j++)
-            {
-                if (j < 8)
-                    btn [j].value = rnd [j];
-                var lng = new Array ();
-                if (j - 1 >= 0 && j % 3)
-                    lng [lng.length] = j - 1;
-
-                if (j + 1 < 9 && (j + 1) % 3)
-                    lng [lng.length] = j + 1;
-
-                if (j - 3 >= 0)
-                    lng [lng.length] = j - 3;
-
-                if (j + 3 < 9)
-                    lng [lng.length] = j + 3;
-
-                btn [j].lang = lng.sort ().join ('-');
-            }
-
-        }) ();
-    }
+    return true
+}
