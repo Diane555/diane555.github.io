@@ -23,16 +23,28 @@
 # Registers:
 
 # File marks:
-'0  77  0  ~/eight/js/game.js
-|4,48,77,0,1638331754,"~/eight/js/game.js"
+'0  1  0  ~/eight/js/agenda.js
+|4,48,1,0,1638335555,"~/eight/js/agenda.js"
+'1  77  0  ~/eight/js/game.js
+|4,49,77,0,1638331754,"~/eight/js/game.js"
 
 # Jumplist (newest first):
+-'  1  0  ~/eight/js/agenda.js
+|4,39,1,0,1638335555,"~/eight/js/agenda.js"
+-'  77  0  ~/eight/js/game.js
+|4,39,77,0,1638331754,"~/eight/js/game.js"
 -'  77  0  ~/eight/js/game.js
 |4,39,77,0,1638331754,"~/eight/js/game.js"
 -'  1  0  ~/eight/js/game.js
 |4,39,1,0,1638331701,"~/eight/js/game.js"
+-'  1  0  ~/eight/js/game.js
+|4,39,1,0,1638331701,"~/eight/js/game.js"
 
 # History of marks within files (newest to oldest):
+
+> ~/eight/js/agenda.js
+	*	1638332051	0
+	"	1	0
 
 > ~/eight/js/game.js
 	*	1638331751	0

@@ -1,124 +1,3 @@
-git commit -m "third commit"
-git status
-git add
-git status
-git add .
-git status 
-git add
-git add .
-git commit -a
-rm -rf .git
-cd www
-git status
-git add .
-git commit -m "third commit"
-git push origin master
-cd www
-git status
-git add .
-git commit -m "new commit"
-git push origin master
-git add .
-git commit -m "another commit"
-git push origin master
-cd www
-git status
-git add .
-git commit -m "fourth commit"
-cd www
-git status
-git add .
-git commit -m "commit"
-git push orifin master
-git push origin master
-cd www
-git status
-git add .
-git commit -m "one"
-git push master
-git push origin master
-cd www
-http-server
-cd www
-git status 
-git add .
-git commit -m "two"
-git push origin master
-cd www
-git status
-fit add .
-git coomit -m "three"
-git commit -m "three"
-git add .
-git commit -m "three"
-git push origin master
-http-server
-cd www
-git status
-git add .
-git commmit -m "zwei"
-git commit -m "zwei"
-git push origin master
-cd www
-git status
-git add .
-git commit -m "drei"
-git push origin master
-cd www
-git status
-git add
-git add .
-git commit -m "button"
-git origin master
-cd www
-git status
-git add .
-git commit -m <style>
-cd www
-git status
-git commit -m "button"
-git push origin master
-cd www
-git add .
-git commit -m "vier"
-git push origin master
-git add .
-git commit -m "v"
-git push origin master
-cdCD www
-cd www
-gitgut addadd . 
-gitgit addadd . 
-gI
-gitgut 
-cd www
-git add .
-git commit -m "zehn"
-git push origin master
-git add .
-git commit -m "buttos"
-git push origin master
-git add .
-git commit -m "home"
-git push origin master 
-git add .
-git commit -m "newww"
-git push origin master
-git add .
-git commit -m "refresh"
-git push origin master
-git add .
-git commit -m "oforma"
-git push origin master
-git add .
-git commit -m "w"
-git push origin master
-git add .
-git commit -m "hm"
-git push origin master
-git add .
-git commit -m "felix"
-git push origin master
 cd www
 git add .
 git commit -m "pic"
@@ -500,5 +379,125 @@ ls -lA
 git clone <url>
 cd
 echo "# test-github" >> README.md
+git init
+git add README.md
+git add .
+git status 
+git commit -m "pleasework"
+git status 
+git log
+git branch
+git branch -M main.
+git branch -M main
+git remote -v
+git remote origin  Diane555/diane555.github.io
+git remote -v
+git push -u origin main
+git remote origin  Diane555/diane555.github.io
+git push -u origin main
+git remote add origin https://github.com/Diane555/diane555.github.io
+git remote -v 
+git push -u origin main
+git push origin main
+cd www
+git status 
+git add .
+git push origin master
+git push origin main 
+git push origin master 
+git status 
+git add .
+git commit -m "ohyea"
+git push origin master 
+git status 
+git add .
+git commit -m "ghmmm"
+git push origin main 
+cd 
+wget https://vadimgb.github.io/cs21/data/eight_ai.zip
+unzip search.zip
+wget https://vadimgb.github.io/cs21/data/eight_ai.zip
+eight_ai.zip
+wget https://vadimgb.github.io/cs21/data/eight_ai.zip
+unzip search.zip
+rm -f search.zip
+wget https://vadimgb.github.io/cs21/data/eight_ai.zip
+cd www
+cd eight 
+http-server 
+cd eight 
+cd www
+git status 
+git add .
+git connit -m "idk"
+git commit -m "idk"
+git push origin master 
+cd www
+git status 
+git add .
+git push origin master 
+git status 
+git add .
+git commit -m "kkkkkkkkkkkkkkkkkkk"
+git push origin master 
+git add .
+git commit -m "w"
+git push origin master 
+git status 
+git add .
+git commit -m "firstclick"
+git push origin master 
+git status 
+git add .
+git commit -m "secondclick"
+git push origin master 
+git add .
+git commit -m "thirdclick"
+git push origin master 
+git add .
+git commit -m "fourthclivk"
+git push origin master 
+git status 
+git add .
+git commit -m "funfclick"
+git push origin master 
+git status 
+git add .
+gitt commit -m "herewegoagaibdmn"
+git commit "hohshtherewegoagain" 
+git commit -m "ohshtherewegoagain"
+git push origin master 
+git status 
+git add .
+git commit -m "maybeitworks"
+git pudh origin master 
+git push origin master 
+git add .
+git commit -m "isayrun"
+git push origin master 
+git add .
+git commit -m 
+git commit -m "loser"
+git push origin master 
+git add .
+git commit -m "acupoftea"
+git push origin master 
+git sttaus 
+git add .
+git commot -m "whatthehell"
+git commit -m "whatthehell"
+git push origin master 
+git satus 
+git add .
+git commit -m "sick"
+git push origin master 
+http-server 
+cd www
+git status 
+git add .
+git commit -m "plsworkah"
+git push origi master 
+http-server 
+cd 
 git init
 git add README.md
