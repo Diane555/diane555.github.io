@@ -1,14 +1,33 @@
 const right = 1, left = 2, up = 3, down = 4
 
-function findZero(state)
-{
-    for(let l = 0; l < 3; l++)
+function hod()
     {
-        for(let k = 0; k < 3; k++)
-            if(state[l][k] === 0)
-                return [l, k]
+        m++;
+        document.getElementById("steps").innerHTML = "Ходов:    " + m;
+
     }
-}
+
+    function igra (ev)
+    {
+        var e = ev || window.event, o = e.target || e.srcElement;
+        if (o.tagName != 'INPUT')
+            return;
+        var obj = document.getElementById('m15'),
+            btn = obj.getElementsByTagName('input');
+        for (var sos = o.lang.split ('-'), j = k = 0, lj = sos.length; j < lj; j++)
+           if (btn [sos [j]].value < 0) {k = 1; break}
+        if (!k) return;
+        btn [sos [j]].style.visibility = 'visible';
+        btn [sos [j]].value = o.value;
+        o.style.visibility = 'hidden';
+        o.value = -1;
+        hod();
+        for (var j = 0; j < 8; j++)
+            if (btn [j].value != j + 1)
+                return;
+        obj.onclick = null;
+        alert ('Головоломка решена!');
+    }
 
 export function actions(state)
 {
