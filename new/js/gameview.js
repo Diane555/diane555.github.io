@@ -34,6 +34,7 @@ class Tile
     }
 }
 
+
 export class GameView
 {
     constructor(state)
